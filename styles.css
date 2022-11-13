@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(17 24 3);
+    color: rgb(209 213 219);     
+}
+
+.mainGrid {
+    width: 480px;
+    height: 480px;
+    background-color: rgb(150 150 150);
+    display: grid;
+
+}
+
+.drawSquare {
+    background-color: rgb(255, 255, 255);
+    color: white;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+ 
+}
