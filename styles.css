@@ -1,6 +1,9 @@
 body {
     background-color: rgb(17 24 3);
     color: rgb(209 213 219);     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .mainGrid {

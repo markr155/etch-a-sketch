@@ -7,6 +7,10 @@ let currentColour = defaultColour;
 let currentMode = defaultMode;
 let currentSize = defaultSize;
 
+const changeSizeBtn = document.querySelector('#changeSize');
+const changeModeBtn = document.querySelector('#changeMode');
+const resetGridBtn = document.querySelector('#resetGridBtn');
+
 //draws the grid with variable dimensions
 function drawGrid(size){
 
@@ -26,6 +30,13 @@ function changeColour(e){
     e.target.style.backgroundColor = currentColour; 
 }
 
+//changes the size of grid on click
+function changeSize(newSize){
+}
+changeSizeBtn.addEventListener('click', () => {
+    let newSize = prompt('Enter a size between 1 - 100')
+    if(newSize )
+});
 
 const mainGrid = document.querySelector(".mainGrid");
 
