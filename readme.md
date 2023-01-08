@@ -9,3 +9,6 @@ Etch-A-Sketch project
 <!-- 6. center justify items, second draft layout -->
 <!-- 7. add draw and erase buttons -->
 <!-- 8. draw and erase functions -->
+9. add change mode function, rainbow mode(random rgb value on mouseover)? - maybe change colour button & function instead
+
+basic/usable design & functioning except for change mode button
