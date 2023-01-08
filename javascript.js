@@ -7,12 +7,17 @@ let currentColour = defaultColour;
 let currentMode = defaultMode;
 let currentSize = defaultSize;
 
+const mainGrid = document.querySelector(".mainGrid");
 const changeSizeBtn = document.querySelector('#changeSize');
 const changeModeBtn = document.querySelector('#changeMode');
-const resetGridBtn = document.querySelector('#resetGridBtn');
+const resetGridBtn = document.querySelector('#resetGrid');
 
 //draws the grid with variable dimensions
 function drawGrid(size){
+    const drawSquares = document.getElementsByClassName('.drawSquares');
+    while (mainGrid.firstChild) {
+        mainGrid.firstChild.remove()
+    };
 
     mainGrid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     mainGrid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -23,6 +28,8 @@ function drawGrid(size){
         newDiv.addEventListener('mouseover', changeColour);
         mainGrid.appendChild(newDiv)
         }
+    currentSize = size;
+    
 }
 
 //changes colour of divs on mouseover
@@ -30,17 +37,26 @@ function changeColour(e){
     e.target.style.backgroundColor = currentColour; 
 }
 
-//changes the size of grid on click
-function changeSize(newSize){
-}
-changeSizeBtn.addEventListener('click', () => {
+//changes the size of grid on button click
+function changeSize(){
     let newSize = prompt('Enter a size between 1 - 100')
-    if(newSize )
-});
+    if(newSize < 0 || newSize > 100 || isNaN(newSize)){
+        alert("Please enter a number between 1 and 100 inclusive");
+    };
+    drawGrid(newSize);
+}
+changeSizeBtn.addEventListener('click', () => {changeSize()});
 
-const mainGrid = document.querySelector(".mainGrid");
+//reset the grid on button click
+function resetGrid(){
+    const drawSquares = document.getElementsByClassName('drawSquare');
+    for(let i = 0; i < drawSquares.length; i++) {
+        drawSquares[i].style.backgroundColor = 'white';
+    }
+}
+resetGridBtn.addEventListener('click', () => {resetGrid()});
 
-drawGrid(10);
 
 
-//change square colour when mouse enters
+drawGrid(currentSize);
+
